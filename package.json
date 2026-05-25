@@ -1,0 +1,9 @@
+{
+  "name": "just-dosa-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Just Dosa — South Indian restaurant website with Square POS integration",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
