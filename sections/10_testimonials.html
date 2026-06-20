@@ -1,0 +1,101 @@
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  JUST DOSA — SECTION: TESTIMONIALS
+     ╚══════════════════════════════════════════════════════════════╝
+     ▌▌▌ TESTIMONIALS ▌▌▌
+     Featured rotating quote + marquee chips + trust stats. Swap real reviews in .t-slide and .t-chip.
+     NOTE: This is a modular section. The LIVE site uses index.html
+     (this section is also embedded there). Styles: css/styles.css -->
+
+<!-- ══════════ TESTIMONIALS — slot before founders ══════════ -->
+<section class="testimonials sec" id="testimonials">
+  <div class="rv" style="text-align:center;margin-bottom:3rem;">
+    <div class="tag" style="justify-content:center;">⭐ Loved by Locals</div>
+    <h2 class="sec-h2" style="color:var(--cream);">What our <em>guests</em> say</h2>
+    <p style="color:var(--muted);max-width:440px;margin:1rem auto 0;font-weight:300;">Real reviews from real Mill Park diners.</p>
+  </div>
+
+  <!-- Featured rotating quote -->
+  <div class="t-featured rv">
+    <div class="t-quote-mark">"</div>
+    <div class="t-stage">
+      <div class="t-slide on" data-idx="0">
+        <p class="t-text">Absolutely the best dosa I've had outside South India. The benne masala was crispy, buttery, golden perfection. The chutneys are made fresh — you can taste the difference.</p>
+        <div class="t-meta">
+          <div class="t-avatar">PR</div>
+          <div class="t-who"><strong>Priya R.</strong><span>Bundoora · Google Review</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="t-slide" data-idx="1">
+        <p class="t-text">Saturday Kalyana Virundu is a religious experience. 19 items on a banana leaf, every single one prepared with love. Felt like being at a wedding back home in Chennai.</p>
+        <div class="t-meta">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#7a3d22,#4a2010);">AK</div>
+          <div class="t-who"><strong>Arjun K.</strong><span>Reservoir · Repeat Customer</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="t-slide" data-idx="2">
+        <p class="t-text">My kids are the pickiest eaters and they devoured the ghee podi dosa. Service was warm, prices fair, and the student discount is a beautiful touch. Will be back every weekend.</p>
+        <div class="t-meta">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#3d7a22,#1d4010);">SM</div>
+          <div class="t-who"><strong>Sarah M.</strong><span>Mill Park · Family of 4</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="t-slide" data-idx="3">
+        <p class="t-text">Chicken 65 biryani had me in tears (the happy spicy kind). Authentic Madurai flavours, generous portions, and the Jigarthanda was the cherry on top. Just Dosa is the real deal.</p>
+        <div class="t-meta">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#8b6322,#5a4015);">RV</div>
+          <div class="t-who"><strong>Ravi V.</strong><span>Epping · Foodie</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="t-controls">
+      <button class="t-arr" id="tPrev" aria-label="Previous review">←</button>
+      <div class="t-dots" id="tDots">
+        <button class="t-dot on" data-i="0" aria-label="Review 1"></button>
+        <button class="t-dot" data-i="1" aria-label="Review 2"></button>
+        <button class="t-dot" data-i="2" aria-label="Review 3"></button>
+        <button class="t-dot" data-i="3" aria-label="Review 4"></button>
+      </div>
+      <button class="t-arr" id="tNext" aria-label="Next review">→</button>
+    </div>
+  </div>
+
+  <!-- Marquee strip of shorter reviews -->
+  <div class="t-marquee-wrap rv">
+    <div class="t-marquee" id="tMarquee">
+      <div class="t-mq-track">
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Crispy outside, soft inside — exactly like home."</span><span class="t-chip-name">— Lakshmi P.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Best South Indian food in northern Melbourne. Period."</span><span class="t-chip-name">— Daniel W.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"The sambar! I could drink it by the bowl."</span><span class="t-chip-name">— Mei L.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Authentic, affordable, and the staff are wonderful."</span><span class="t-chip-name">— Karthik S.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Catered our wedding — guests are still talking about it."</span><span class="t-chip-name">— Anjali &amp; Rohan</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Pallipalayam chicken is unreal. Go hungry."</span><span class="t-chip-name">— James T.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Student discount + huge portions = my Friday tradition."</span><span class="t-chip-name">— Aisha N.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Tastes exactly like Madurai. Speechless."</span><span class="t-chip-name">— Vivek M.</span></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Crispy outside, soft inside — exactly like home."</span><span class="t-chip-name">— Lakshmi P.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Best South Indian food in northern Melbourne. Period."</span><span class="t-chip-name">— Daniel W.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"The sambar! I could drink it by the bowl."</span><span class="t-chip-name">— Mei L.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Authentic, affordable, and the staff are wonderful."</span><span class="t-chip-name">— Karthik S.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Catered our wedding — guests are still talking about it."</span><span class="t-chip-name">— Anjali &amp; Rohan</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Pallipalayam chicken is unreal. Go hungry."</span><span class="t-chip-name">— James T.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Student discount + huge portions = my Friday tradition."</span><span class="t-chip-name">— Aisha N.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Tastes exactly like Madurai. Speechless."</span><span class="t-chip-name">— Vivek M.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="t-trust rv">
+    <div class="t-trust-item"><div class="t-trust-num">4.8</div><div class="t-trust-lbl">★ Google Rating</div></div>
+    <div class="t-trust-divider"></div>
+    <div class="t-trust-item"><div class="t-trust-num">500+</div><div class="t-trust-lbl">Five-Star Reviews</div></div>
+    <div class="t-trust-divider"></div>
+    <div class="t-trust-item"><div class="t-trust-num">10K+</div><div class="t-trust-lbl">Happy Guests</div></div>
+    <div class="t-trust-divider"></div>
+    <div class="t-trust-item"><div class="t-trust-num">100%</div><div class="t-trust-lbl">Halal Certified</div></div>
+  </div>
+</section>

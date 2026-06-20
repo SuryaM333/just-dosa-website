@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Just Dosa · Authentic South Indian Cuisine · Millpark, Melbourne</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════════════╗
+     ║  JUST DOSA — MAIN PAGE (index.html)                               ║
+     ║  Authentic South Indian Restaurant · Mill Park, Melbourne        ║
+     ╠══════════════════════════════════════════════════════════════════╣
+     ║  SECTION MAP (search the ▌ marker to jump to a section)          ║
+     ║                                                                  ║
+     ║   ▌ STUDENT BANNER ....... top promo strip                       ║
+     ║   ▌ NAVIGATION ........... sticky top nav bar                    ║
+     ║   ▌ HERO ................. fullscreen slideshow + headline       ║
+     ║   ▌ STATEMENT ............ "Crispy gold" + dosa frame sequence   ║
+     ║   ▌ SHOWCASE ............. numbered signature dishes (01-04)     ║
+     ║   ▌ MARQUEE .............. scrolling tagline strip               ║
+     ║   ▌ ABOUT ................ our story + student discount card     ║
+     ║   ▌ MENU ................. full food menu (tabs + items)         ║
+     ║   ▌ KALYANA .............. Saturday wedding feast section        ║
+     ║   ▌ WHY .................. "the difference" 4 cards              ║
+     ║   ▌ ORDER ................ delivery / pickup / dine-in           ║
+     ║   ▌ INSPIRATION .......... South India culture tiles             ║
+     ║   ▌ TESTIMONIALS ......... reviews carousel + marquee            ║
+     ║   ▌ FOUNDERS ............. team / founder messages               ║
+     ║   ▌ FOOTER ............... links, contact, copyright             ║
+     ║   ▌ CART DRAWER .......... slide-out shopping cart               ║
+     ║   ▌ WHATSAPP FLOAT ....... floating contact button              ║
+     ║   ▌ SCRIPTS .............. JS libraries + site scripts           ║
+     ║                                                                  ║
+     ║  STYLES → css/styles.css   |   SCRIPTS → js/ (main, motion,      ║
+     ║  effects)   |   To edit a dish, find ▌ MENU below.               ║
+     ╚══════════════════════════════════════════════════════════════════╝ -->
+
+<!-- ▌▌▌ STUDENT BANNER ▌▌▌
+     Top promo strip · edit the discount % text here -->
+<div class="student-banner">🎓 <span>10% OFF</span> with Student ID &nbsp;·&nbsp; Show your card when ordering!</div>
+
+<div id="cur-ring"></div></div>
+
+<!-- ▌▌▌ NAVIGATION ▌▌▌
+     Sticky top nav · links auto-scroll · Order btn + cart icon -->
+<nav id="nav">
+  <a class="n-logo" href="#home">Just Dosa</a>
+  <ul class="n-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#showcase">Signatures</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#kalyana">Kalyana Virundu</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#founders">Our Team</a></li>
+    <li><a href="#find-us">Find Us</a></li>
+    <li class="n-actions">
+      <a href="https://www.justdosa.com.au/" target="_blank" rel="noopener" data-order="square" class="n-btn">Order Now ↗</a>
+      <button class="n-cart" id="cartBtn" aria-label="Open cart">🛒<span class="cart-badge" id="cartBadge">0</span></button>
+    </li>
+  </ul>
+</nav>
+
+<!-- ▌▌▌ HERO ▌▌▌
+     Fullscreen slideshow · slides/captions in JS (main.js HERO CAROUSEL) -->
+<section class="hero" id="home">
+  <div class="hero-prog"><div class="hero-bar" id="hbar"></div></div>
+  <div class="slides">
+    <div class="slide s1"></div><div class="slide s2"></div>
+    <div class="slide s3"></div><div class="slide s4"></div>
+    <div class="slide s5"></div><div class="slide s6"></div>
+  </div>
+  <div class="hero-ov1"></div><div class="hero-ov2"></div>
+  <div class="hero-txt">
+    <div class="h-label">Authentic South Indian · Mill Park, Melbourne</div>
+    <h1 class="hero-h1">Just<br/><em>Dosa.</em></h1>
+    <p class="hero-p">Crispy, golden, made with love — the way it's always been done. From our family to yours.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-gold">Explore Menu →</a>
+      <a href="https://www.justdosa.com.au/" target="_blank" rel="noopener" data-order="square" class="btn-outline">Order Online ↗</a>
+    </div>
+  </div>
+  <div class="hero-ctr" id="hnum">01</div>
+  <div class="hero-nav">
+    <div class="slide-dots" id="sdots">
+      <button class="sdot on"></button><button class="sdot"></button>
+      <button class="sdot"></button><button class="sdot"></button>
+      <button class="sdot"></button><button class="sdot"></button>
+    </div>
+    <div class="h-arrows">
+      <button class="h-arr" id="hl">←</button>
+      <button class="h-arr" id="hr">→</button>
+    </div>
+  </div>
+  <div class="slide-cap on" id="sc0"><span class="cap-tag">Kalyana Veetu</span><span class="cap-name">South Indian Biryani — aromatic &amp; rich</span></div>
+  <div class="slide-cap" id="sc1"><span class="cap-tag">Signature</span><span class="cap-name">Crispy golden Dosa — the heart of our kitchen</span></div>
+  <div class="slide-cap" id="sc2"><span class="cap-tag">Chettinad Classic</span><span class="cap-name">Pallipalayam Chicken — bold &amp; unforgettable</span></div>
+  <div class="slide-cap" id="sc3"><span class="cap-tag">Fan Favourite</span><span class="cap-name">Chicken 65 Biryani — spiced to perfection</span></div>
+  <div class="slide-cap" id="sc4"><span class="cap-tag">Seeraga Samba</span><span class="cap-name">Mutton Biryani — rich wedding-style</span></div>
+  <div class="slide-cap" id="sc5"><span class="cap-tag">South Indian Soul</span><span class="cap-name">Sambar — slow-cooked with love</span></div>
+  <div class="hero-scroll"><div class="scrl-line"></div>Scroll</div>
+</section>
+
+<!-- ══════════ EDITORIAL STATEMENT BAND ══════════ -->
+<!-- ▌▌▌ STATEMENT ▌▌▌
+     Big tagline + dosa frame-sequence background. To add frames: drop in assets/frames/dosa/ and set data-frames below -->
+<section class="statement frameseq-bg" id="statement"
+         data-frames="0"
+         data-path="assets/frames/dosa/frame_"
+         data-ext=".jpg"
+         data-pad="4">
+  <canvas class="statement-canvas" id="statementCanvas"></canvas>
+  <div class="statement-fallback" style="background-image:url('assets/images/image_001.jpg');"></div>
+  <div class="statement-video-ov"></div>
+  <div class="statement-bg-word">Dosa</div>
+  <div class="statement-inner">
+    <span class="statement-line"><span class="sw">Crispy</span> <span class="sw"><em>gold.</em></span></span>
+    <span class="statement-line delay1"><span class="sw">Slow-cooked</span> <span class="sw"><em>soul.</em></span></span>
+    <span class="statement-line delay2"><span class="sw">Made</span> <span class="sw">for</span> <span class="sw">those</span> <span class="sw">who</span></span>
+    <span class="statement-line delay2"><span class="sw">taste</span> <span class="sw"><em>everything.</em></span></span>
+    <div class="statement-sub">Authentic South Indian · Mill Park, Melbourne</div>
+  </div>
+</section>
+<!-- ══════════ NUMBERED SHOWCASE — scroll-driven signature dishes ══════════ -->
+<!-- ▌▌▌ SHOWCASE ▌▌▌
+     Numbered signature dishes 01-04 · edit dish name/desc/image per .sc-item -->
+<section class="showcase" id="showcase">
+  <div class="showcase-head fade-up">
+    <div class="tag" style="justify-content:center;">The Signatures</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);">Dishes worth the <em>journey</em></h2>
+    <p style="color:var(--muted);max-width:440px;margin:1rem auto 0;font-weight:300;">Four plates that define who we are. Each one perfected across South India.</p>
+  </div>
+
+  <div class="sc-item" data-parallax-group>
+    <div class="sc-visual tilt3d" data-cursor-text="Signature"><div class="sc-visual-bg parallax" data-speed="0.15" style="background-image:url('assets/images/image_001.jpg');"></div><div class="sc-emoji">🥞</div></div>
+    <div class="sc-text">
+      <div class="sc-num">01</div>
+      <div class="sc-cat">Signature · Bengaluru</div>
+      <h3 class="sc-name">Open Benne <em>Masala Dosa</em></h3>
+      <p class="sc-desc">Golden-crisp, lathered in cultured butter, folded over spiced potato masala. The dish that started it all — flavours you simply can't find anywhere else.</p>
+      <div class="sc-tags"><span class="sc-tag">🌿 Veg</span><span class="sc-tag">House Favourite</span><span class="sc-tag">Made to Order</span></div>
+    </div>
+  </div>
+
+  <div class="sc-item" data-parallax-group>
+    <div class="sc-visual tilt3d" data-cursor-text="Signature"><div class="sc-visual-bg parallax" data-speed="0.15" style="background-image:url('assets/images/image_010.jpg');"></div><div class="sc-emoji">🍛</div></div>
+    <div class="sc-text">
+      <div class="sc-num">02</div>
+      <div class="sc-cat">Fan Favourite · Madurai</div>
+      <h3 class="sc-name">Chicken 65 <em>Biryani</em></h3>
+      <p class="sc-desc">Seeraga samba rice layered with fiery Chicken 65, slow-dum cooked until every grain is perfumed. Spiced to perfection, served with raita and salna.</p>
+      <div class="sc-tags"><span class="sc-tag">🍗 Non-Veg</span><span class="sc-tag">Spicy</span><span class="sc-tag">Bestseller</span></div>
+    </div>
+  </div>
+
+  <div class="sc-item" data-parallax-group>
+    <div class="sc-visual tilt3d" data-cursor-text="Signature"><div class="sc-visual-bg parallax" data-speed="0.15" style="background-image:url('assets/images/image_020.jpg');"></div><div class="sc-emoji">🔥</div></div>
+    <div class="sc-text">
+      <div class="sc-num">03</div>
+      <div class="sc-cat">Chettinad Classic · Tamil Nadu</div>
+      <h3 class="sc-name">Pallipalayam <em>Chicken</em></h3>
+      <p class="sc-desc">Bold, smoky and unforgettable — chicken tossed with crushed pepper, curry leaves and shallots in the legendary Kongunadu style. Not for the faint-hearted.</p>
+      <div class="sc-tags"><span class="sc-tag">🍗 Non-Veg</span><span class="sc-tag">Extra Spicy</span><span class="sc-tag">Authentic</span></div>
+    </div>
+  </div>
+
+  <div class="sc-item" data-parallax-group>
+    <div class="sc-visual tilt3d" data-cursor-text="Signature"><div class="sc-visual-bg parallax" data-speed="0.15" style="background-image:url('assets/images/image_030.jpg');"></div><div class="sc-emoji">🎉</div></div>
+    <div class="sc-text">
+      <div class="sc-num">04</div>
+      <div class="sc-cat">Saturday Only · Wedding Feast</div>
+      <h3 class="sc-name">Kalyana <em>Virundu</em></h3>
+      <p class="sc-desc">A South Indian wedding banquet on a banana leaf — 19 items of pure tradition, served with love and meant to be shared. Every Saturday, lunch only.</p>
+      <div class="sc-tags"><span class="sc-tag">🌿 Veg &amp; Non-Veg</span><span class="sc-tag">Limited Seats</span><span class="sc-tag">Experience</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ▌▌▌ MARQUEE ▌▌▌
+     Scrolling tagline strip · edit the ✦ items here -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-inner"><span class="mq-item">✦ Authentic South Indian</span><span class="mq-item">✦ Fresh Daily Batter</span><span class="mq-item">✦ Halal Certified</span><span class="mq-item">✦ Kalyana Virundu Every Saturday</span><span class="mq-item">✦ Made to Order</span><span class="mq-item">✦ UberEats & DoorDash</span><span class="mq-item">✦ Melbourne's Best Dosa</span><span class="mq-item">✦ 10% Off With Student ID</span><span class="mq-item">✦ Millpark · Victoria · Australia</span><span class="mq-item">✦ We Cater For All Occasions</span><span class="mq-item">✦ Authentic South Indian</span><span class="mq-item">✦ Fresh Daily Batter</span><span class="mq-item">✦ Halal Certified</span><span class="mq-item">✦ Kalyana Virundu Every Saturday</span><span class="mq-item">✦ Made to Order</span><span class="mq-item">✦ UberEats & DoorDash</span><span class="mq-item">✦ Melbourne's Best Dosa</span><span class="mq-item">✦ 10% Off With Student ID</span><span class="mq-item">✦ Millpark · Victoria · Australia</span><span class="mq-item">✦ We Cater For All Occasions</span></div>
+</div>
+
+<!-- ABOUT -->
+<!-- ▌▌▌ ABOUT ▌▌▌
+     Our story text + 4 feature cards + student discount card -->
+<section class="about" id="about">
+  <div class="a-img rvl">
+    <div class="a-glow"></div>
+    <div class="a-img-inner">🌿</div>
+    <div class="a-badge"><div class="bl">Halal Certified</div><div class="bn">100%</div></div>
+  </div>
+  <div class="a-text">
+    <div class="rv"><div class="tag">Our Story</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);margin-bottom:1.5rem;">Born from<br/><em>passion,</em><br/>served with pride.</h2></div>
+    <div class="rv d1">
+      <p>Just Dosa was founded with one simple goal — to bring the authentic flavours of South India to Millpark, Melbourne. A group of friends who couldn't find the food they loved back home decided to create it themselves.</p>
+      <p>We travelled across South India tasting, discovering, and perfecting. Every dosa is crafted from scratch with fermented batter, fresh fillings, and house-made chutneys.</p>
+    </div>
+    <div class="a-grid rv d2">
+      <div class="a-card"><h4>Fresh Daily</h4><p>Batter fermented every morning for the perfect crisp</p></div>
+      <div class="a-card"><h4>Veg &amp; Non-Veg</h4><p>Something for everyone, clearly labelled</p></div>
+      <div class="a-card"><h4>Made to Order</h4><p>Every dish cooked fresh when you order</p></div>
+      <div class="a-card"><h4>Family Recipes</h4><p>Generations of culinary heritage in every bite</p></div>
+    </div>
+    <div class="student-card rv d3">
+      <div class="pct">10%</div>
+      <div class="txt">
+        <h4>🎓 Student Discount</h4>
+        <p>Show your valid Student ID at the counter and enjoy 10% off your entire order. Every visit, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<!-- ▌▌▌ MENU ▌▌▌
+     FULL FOOD MENU · tabs + item cards. Each dish = .mc block with name, price, desc. Add/remove dishes here -->
+<section class="menu-sec sec" id="menu">
+  <div class="m-top">
+    <div class="rv"><div class="tag">What We Serve</div><h2 class="sec-h2 split-line" style="color:var(--cream);">Our <em>full menu</em></h2></div>
+    <span class="halal rv">🟢 Halal Certified</span>
+  </div>
+  <div class="legend rv">
+    <span><span class="dot" style="background:#3d7a22;"></span>Vegetarian</span>
+    <span><span class="dot" style="background:#8b3010;"></span>Non-Veg</span>
+    <span><span class="dot" style="background:#c8841a;"></span>Egg</span>
+  </div>
+  <div class="m-tabs rv">
+    <button class="mtab on" onclick="st('vs',this)">Veg Starters</button>
+    <button class="mtab" onclick="st('es',this)">Egg</button>
+    <button class="mtab" onclick="st('ns',this)">Non-Veg Starters</button>
+    <button class="mtab" onclick="st('ut',this)">Uthappam</button>
+    <button class="mtab" onclick="st('iv',this)">Idly &amp; Vada</button>
+    <button class="mtab" onclick="st('ds',this)">Dosas</button>
+    <button class="mtab" onclick="st('vc',this)">Veg Curries</button>
+    <button class="mtab" onclick="st('nc',this)">Non-Veg Curries</button>
+    <button class="mtab" onclick="st('rk',this)">Roti &amp; Kothu</button>
+    <button class="mtab" onclick="st('br',this)">Biryanis &amp; Rice</button>
+    <button class="mtab" onclick="st('ic',this)">Indo-Chinese</button>
+    <button class="mtab" onclick="st('dd',this)">Drinks &amp; Desserts</button>
+  </div>
+
+<!-- VEG STARTERS -->
+<div class="pnl on" id="pnl-vs"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_007.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Onion Pokoda</div>
+      <div class="mdesc">Crispy fried onion fritters</div>
+    </div>
+    <div class="mc-r"><span class="price">A$12.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Street Style Kaalan (Mushrooms)</div>
+      <div class="mdesc">Spicy roadside-style mushroom masala</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_007.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Mirchi Bhajji</div>
+      <div class="mdesc">Stuffed chilli fritters, crispy fried</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_007.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Cut Mirchi Bhajji</div>
+      <div class="mdesc">Chopped chilli fritters with masala topping</div>
+    </div>
+    <div class="mc-r"><span class="price">A$13.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_008.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>65 Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Spicy South Indian 65-style fry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_009.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Chilli Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Indo-Chinese chilli tossed spicy</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Gun Powder Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Roasted with South Indian spice mix</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_010.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Palipalayam Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Dry roasted with curry leaves &amp; spices</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_011.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Japan Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Crispy tossed in sweet-spicy glaze</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Chukka Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Peppery Chettinad-style dry fry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Guntur Style – Paneer / Cauliflower / Baby Corn / Mushroom</div>
+      <div class="mdesc">Fiery Andhra-style spicy fry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+</div></div>
+
+<!-- EGG SPECIALS -->
+<div class="pnl" id="pnl-es"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#c8841a;"></span>Masala Omelette</div>
+      <div class="mdesc">Classic omelette with Indian spices</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#c8841a;"></span>Masala Kalakki</div>
+      <div class="mdesc">Soft scrambled egg with spicy masala</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#c8841a;"></span>Chicken Omelette</div>
+      <div class="mdesc">Omelette loaded with chicken filling</div>
+    </div>
+    <div class="mc-r"><span class="price">A$11.95</span></div>
+  </div>
+</div>
+</div></div>
+
+<!-- NON VEG STARTERS -->
+<div class="pnl" id="pnl-ns">
+<div class="subhd">🍗 Chicken Starters</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Aattu Kaal Soup (Goat Leg)</div>
+      <div class="mdesc">Slow-cooked goat leg broth, rich &amp; flavourful</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_012.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chicken 65</div>
+      <div class="mdesc">Crispy fried chicken, spicy South Indian style</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Cashew Chicken Pakoda</div>
+      <div class="mdesc">Crispy chicken fritters with cashew crunch</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_013.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Guntur Chicken</div>
+      <div class="mdesc">Fiery Andhra-style spicy chicken fry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_014.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chicken Pepper Onion</div>
+      <div class="mdesc">Peppery chicken tossed with onions</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_015.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Japan Chicken</div>
+      <div class="mdesc">Crispy chicken in sweet-spicy glaze</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_016.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Jaffna Chicken Varuval</div>
+      <div class="mdesc">Sri Lankan-style spicy dry chicken</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_012.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Pichi Potta Kozhi (Chicken)</div>
+      <div class="mdesc">Shredded chicken tossed with spices</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_017.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Palipalayam Chicken</div>
+      <div class="mdesc">Dry roasted chicken with curry leaves</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_014.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Pepper Chicken Chukka</div>
+      <div class="mdesc">Pepper-spiced Chettinad dry chicken</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_018.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chilli Chicken</div>
+      <div class="mdesc">Indo-Chinese chilli tossed chicken</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Gun Powder Chicken</div>
+      <div class="mdesc">Roasted chicken with spicy podi mix</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+</div>
+<div class="subhd" style="margin-top:1rem;">🐑 Mutton / Goat</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_019.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Mutton Chukka</div>
+      <div class="mdesc">Spicy dry mutton with roasted masala</div>
+    </div>
+    <div class="mc-r"><span class="price">A$20.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_020.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Mutton Kola Urundai</div>
+      <div class="mdesc">Minced mutton fried spice balls</div>
+    </div>
+    <div class="mc-r"><span class="price">A$20.95</span></div>
+  </div>
+</div>
+</div>
+<div class="subhd" style="margin-top:1rem;">🐟 Seafood</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Vanjaram Fish Fry (Spanish Mackerel Fry)</div>
+      <div class="mdesc">Seer fish marinated &amp; pan fried</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chilli Style – Prawn / Squid</div>
+      <div class="mdesc">Spicy chilli tossed seafood</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Gun Powder Style – Prawn / Squid</div>
+      <div class="mdesc">Seafood roasted with podi spice</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Guntur – Prawn / Squid</div>
+      <div class="mdesc">Fiery Andhra-style seafood fry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+</div></div>
+
+<!-- UTHAPPAM -->
+<div class="pnl" id="pnl-ut"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_021.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Podi Uthappam</div>
+      <div class="mdesc">Soft uthappam with ghee &amp; podi</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_022.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Onion Uthappam</div>
+      <div class="mdesc">Thick uthappam topped with onions</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_021.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Onion Ghee Podi Uthappam</div>
+      <div class="mdesc">Onion uthappam with ghee &amp; podi</div>
+    </div>
+    <div class="mc-r"><span class="price">A$16.95</span></div>
+  </div>
+</div>
+</div>
+<div class="note g">✅ All Uthappams served with two chutneys &amp; sambar</div></div>
+
+<!-- IDLY VADA -->
+<div class="pnl" id="pnl-iv"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_023.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Medu Vada (3 pcs)</div>
+      <div class="mdesc">Crispy lentil fritters, soft inside</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_023.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Sambar Vada (2 pcs)</div>
+      <div class="mdesc">Vada soaked in flavourful sambar</div>
+    </div>
+    <div class="mc-r"><span class="price">A$12.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_024.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Idly Set (3 pcs)</div>
+      <div class="mdesc">Soft steamed rice cakes</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_025.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Sambar Idly (2 pcs)</div>
+      <div class="mdesc">Idly soaked in hot sambar</div>
+    </div>
+    <div class="mc-r"><span class="price">A$12.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Chilli Idly</div>
+      <div class="mdesc">Fried idly tossed in spicy sauce</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_026.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Podi Idly</div>
+      <div class="mdesc">Idly with ghee &amp; podi spice</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_026.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Thatte Idly</div>
+      <div class="mdesc">Soft thatte idly with ghee</div>
+    </div>
+    <div class="mc-r"><span class="price">A$10.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_026.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Thatte Ghee Podi Idly</div>
+      <div class="mdesc">Thatte idly with ghee &amp; podi</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+</div>
+<div class="note g">✅ All Idlies served with two chutneys &amp; sambar</div></div>
+
+<!-- DOSAS -->
+<div class="pnl" id="pnl-ds">
+<div class="subhd">🌿 Veg Dosas</div>
+<div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_027.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Dosa</div>
+      <div class="mdesc">Crispy dosa with rich ghee flavor</div>
+    </div>
+    <div class="mc-r"><span class="price">A$13.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_027.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Masala Dosa</div>
+      <div class="mdesc">Classic dosa with spiced potato filling</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_027.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Kal Dosa</div>
+      <div class="mdesc">Soft, thick dosa with fluffy texture</div>
+    </div>
+    <div class="mc-r"><span class="price">A$13.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Nutella Dosa</div>
+      <div class="mdesc">Sweet dosa filled with Nutella</div>
+    </div>
+    <div class="mc-r"><span class="price">A$13.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_022.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Onion Dosa</div>
+      <div class="mdesc">Crispy dosa topped with onions</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_027.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Podi Dosa</div>
+      <div class="mdesc">Dosa with ghee &amp; spicy podi</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_027.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Benne / Butter Masala Dosa</div>
+      <div class="mdesc">Butter dosa with potato masala</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_027.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Open Benne Masala Dosa</div>
+      <div class="mdesc">Open-style butter masala dosa</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Cheese Dosa</div>
+      <div class="mdesc">Dosa stuffed with melted cheese</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Chilli Cheese Dosa</div>
+      <div class="mdesc">Spicy dosa with cheese filling</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_028.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Nellore Karam Dosa</div>
+      <div class="mdesc">Spicy Andhra-style karam dosa</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_028.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Nellore Karam Masala Dosa</div>
+      <div class="mdesc">Karam dosa with potato masala</div>
+    </div>
+    <div class="mc-r"><span class="price">A$16.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_028.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Nellore Karam Cheese Dosa</div>
+      <div class="mdesc">Karam dosa with cheese filling</div>
+    </div>
+    <div class="mc-r"><span class="price">A$16.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Paneer Dosa</div>
+      <div class="mdesc">Dosa stuffed with paneer filling</div>
+    </div>
+    <div class="mc-r"><span class="price">A$16.95</span></div>
+  </div>
+</div>
+</div>
+<div class="subhd" style="margin-top:1.2rem;">🥚 Non-Veg Dosas</div>
+<div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_029.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#c8841a;"></span>Egg Dosa</div>
+      <div class="mdesc">Dosa topped with seasoned egg</div>
+    </div>
+    <div class="mc-r"><span class="price">A$15.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_029.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#c8841a;"></span>Nellore Egg Karam Dosa</div>
+      <div class="mdesc">Spicy egg dosa with karam masala</div>
+    </div>
+    <div class="mc-r"><span class="price">A$16.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_029.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Madurai Chicken Kari Dosa</div>
+      <div class="mdesc">Dosa with spicy chicken gravy</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_029.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Madurai Mutton Kari Dosa</div>
+      <div class="mdesc">Dosa with rich mutton gravy</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+</div>
+<div class="note g">✅ All Dosas served with two chutneys &amp; sambar</div></div>
+
+<!-- VEG CURRIES -->
+<div class="pnl" id="pnl-vc"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Jaffna Paneer / Mushroom Curry</div>
+      <div class="mdesc">Sri Lankan-style spicy curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Thengai Paal Veg Kurma</div>
+      <div class="mdesc">Creamy coconut-based veg curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_011.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Pepper Paneer / Mushroom Curry</div>
+      <div class="mdesc">Pepper-spiced rich curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>JD's Paneer Butter Masala</div>
+      <div class="mdesc">Creamy tomato-based paneer curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_030.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Sambar</div>
+      <div class="mdesc">Traditional South Indian lentil curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Dhal</div>
+      <div class="mdesc">Lentils cooked with ghee &amp; spices</div>
+    </div>
+    <div class="mc-r"><span class="price">A$16.95</span></div>
+  </div>
+</div>
+</div></div>
+
+<!-- NON VEG CURRIES -->
+<div class="pnl" id="pnl-nc"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_031.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>JD's Butter Chicken</div>
+      <div class="mdesc">Creamy tomato-based chicken curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_032.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Jaffna Chicken Curry</div>
+      <div class="mdesc">Spicy Sri Lankan-style chicken curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_031.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Kozhi Varutha Kari</div>
+      <div class="mdesc">Kerala-style roasted chicken curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_031.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chettinadu Pepper Chicken</div>
+      <div class="mdesc">Peppery Chettinad chicken curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_031.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chicken Kurma</div>
+      <div class="mdesc">Mild coconut-based chicken curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_032.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chettinadu Pepper Goat Curry</div>
+      <div class="mdesc">Spicy pepper goat curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$21.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_032.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Jaffna Goat Curry</div>
+      <div class="mdesc">Sri Lankan-style goat curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$21.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Goat Paya</div>
+      <div class="mdesc">Slow-cooked goat leg curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$21.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Goat Kurma</div>
+      <div class="mdesc">Rich coconut-based goat curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$21.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Prawn Coconut Curry</div>
+      <div class="mdesc">Creamy coconut prawn curry</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+</div></div>
+
+<!-- ROTI KOTHU -->
+<div class="pnl" id="pnl-rk"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_033.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ghee Porotta</div>
+      <div class="mdesc">Layered flatbread with ghee</div>
+    </div>
+    <div class="mc-r"><span class="price">A$3.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_034.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Idiyappam (8 pcs)</div>
+      <div class="mdesc">Soft steamed string hoppers</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+</div>
+<div class="subhd" style="margin-top:1rem;">Kothu Roti &amp; Idiyappam Kothu</div>
+<div style="overflow-x:auto;">
+<table class="ktbl">
+<thead><tr><th></th><th class="tv">🌿 Veg</th><th class="te">🥚 Egg</th><th class="tnv">🍗 Chicken</th><th class="tnv">🐑 Goat</th></tr></thead>
+<tbody>
+<tr><td>Kothu Roti</td><td class="tv">A$17.95</td><td class="te">A$18.95</td><td class="tnv">A$19.95</td><td class="tnv">A$21.95</td></tr>
+<tr><td>Idiyappam Kothu</td><td class="tv">A$17.95</td><td class="te">A$18.95</td><td class="tnv">A$19.95</td><td class="tnv">A$21.95</td></tr>
+</tbody></table></div>
+<div class="fambir" style="margin-top:1.2rem;">
+<h3>🎉 Kothu Parotta Family Pack</h3><p class="fs">Family-size serving &nbsp;·&nbsp; Price to be confirmed</p>
+<div class="fb-grid">
+<div class="fb-item"><div class="fb-label">Veg Kothu Parotta</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Chicken Kothu Parotta</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Egg Kothu Parotta</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Mutton Kothu Parotta</div><div class="fb-price">TBC</div></div>
+</div></div></div>
+
+<!-- BIRYANIS -->
+<div class="pnl" id="pnl-br">
+<div class="subhd">🌿 Veg Rice</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Nei / Ghee Rice</div>
+      <div class="mdesc">Flavored rice with aromatic ghee</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Plain Biriyani (Khushka)</div>
+      <div class="mdesc">Spiced basmati rice without meat</div>
+    </div>
+    <div class="mc-r"><span class="price">A$14.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Paneer 65 / Gobi 65 / Mushroom 65 Biriyani</div>
+      <div class="mdesc">Spicy 65-style veg biryani</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Paneer Chukka / Mushroom Chukka Pulao</div>
+      <div class="mdesc">Dry roasted masala veg pulao</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>White Rice</div>
+      <div class="mdesc">Steamed plain rice</div>
+    </div>
+    <div class="mc-r"><span class="price">A$7.95</span></div>
+  </div>
+</div>
+</div>
+<div class="subhd" style="margin-top:1rem;">🍗 Non-Veg Biriyani</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_035.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Kalyana Veetu Chicken Biriyani</div>
+      <div class="mdesc">Traditional South Indian wedding-style biryani</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_036.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Seeraga Samba Goat Biriyani</div>
+      <div class="mdesc">Aromatic goat biryani with seeraga samba rice</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_037.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chicken 65 Biriyani</div>
+      <div class="mdesc">Spicy Chicken 65 layered biryani</div>
+    </div>
+    <div class="mc-r"><span class="price">A$20.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_035.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Andhra Chicken Fry Piece Biriyani</div>
+      <div class="mdesc">Andhra-style spicy chicken biryani</div>
+    </div>
+    <div class="mc-r"><span class="price">A$20.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_036.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Kalyana Veetu Mutton Biriyani</div>
+      <div class="mdesc">Rich wedding-style mutton biryani</div>
+    </div>
+    <div class="mc-r"><span class="price">A$20.95</span></div>
+  </div>
+</div>
+</div>
+<div class="fambir">
+<h3>🎉 Special Family Biryani</h3><p class="fs">Serves 4–5 adults &nbsp;·&nbsp; Pre-order required</p>
+<div class="fb-grid">
+<div class="fb-item"><div class="fb-label">Chicken</div><div class="fb-price">A$79.95</div></div>
+<div class="fb-item"><div class="fb-label">Mutton / Goat</div><div class="fb-price">A$89.95</div></div>
+<div class="fb-item"><div class="fb-label">Chicken 65</div><div class="fb-price">A$84.95</div></div>
+<div class="fb-item"><div class="fb-label">Gobi 65</div><div class="fb-price">A$79.95</div></div>
+<div class="fb-item"><div class="fb-label">Paneer 65</div><div class="fb-price">A$79.95</div></div>
+<div class="fb-item"><div class="fb-label">Seeraga Samba Goat<div class="fb-sat">Sat &amp; Sun only</div></div><div class="fb-price">A$99.95</div></div>
+</div></div></div>
+
+<!-- INDO CHINESE -->
+<div class="pnl" id="pnl-ic"><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_038.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Veg Fried Rice / Noodles</div>
+      <div class="mdesc">Stir-fried rice or noodles with veggies</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_038.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#c8841a;"></span>Egg Fried Rice / Noodles</div>
+      <div class="mdesc">Rice or noodles with egg &amp; spices</div>
+    </div>
+    <div class="mc-r"><span class="price">A$18.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_038.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Chicken Fried Rice / Noodles</div>
+      <div class="mdesc">Chicken tossed with rice or noodles</div>
+    </div>
+    <div class="mc-r"><span class="price">A$19.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_038.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#8b3010;"></span>Prawn Fried Rice / Noodles</div>
+      <div class="mdesc">Seafood stir-fried rice or noodles</div>
+    </div>
+    <div class="mc-r"><span class="price">A$22.95</span></div>
+  </div>
+</div>
+</div>
+<div class="fambir" style="margin-top:1.2rem;">
+<h3>🎉 Fried Rice Family Pack</h3><p class="fs">Family-size serving &nbsp;·&nbsp; Price to be confirmed</p>
+<div class="fb-grid">
+<div class="fb-item"><div class="fb-label">Veg Fried Rice</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Egg Fried Rice</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Chicken Fried Rice</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Prawn Fried Rice</div><div class="fb-price">TBC</div></div>
+</div></div>
+<div class="fambir" style="margin-top:1.2rem;">
+<h3>🎉 Noodles Family Pack</h3><p class="fs">Family-size serving &nbsp;·&nbsp; Price to be confirmed</p>
+<div class="fb-grid">
+<div class="fb-item"><div class="fb-label">Veg Noodles</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Egg Noodles</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Chicken Noodles</div><div class="fb-price">TBC</div></div>
+<div class="fb-item"><div class="fb-label">Prawn Noodles</div><div class="fb-price">TBC</div></div>
+</div></div><div class="note r">🌶️ Add Schezwan spice for +A$2 extra</div></div>
+
+<!-- DRINKS & DESSERTS -->
+<div class="pnl" id="pnl-dd">
+<div class="subhd">☕ Hot Beverages</div>
+<div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Madras Filter Coffee</div>
+      <div class="mdesc">Strong South Indian brewed coffee</div>
+    </div>
+    <div class="mc-r"><span class="price">A$4.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Masala Tea</div>
+      <div class="mdesc">Spiced Indian milk tea</div>
+    </div>
+    <div class="mc-r"><span class="price">A$4.95</span></div>
+  </div>
+</div>
+</div>
+
+<div class="subhd" style="margin-top:1.2rem;">🥤 Canned Drinks — A$4.50 each</div>
+<div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem;padding:.2rem 0;">
+  <span class="pill">⚡ Thums Up</span>
+  <span class="pill">🟢 Sprite</span>
+  <span class="pill">🟡 Limca</span>
+  <span class="pill">🟠 Fanta</span>
+  <span class="pill">🔴 Coke Classic</span>
+  <span class="pill">⚫ Coke Zero Sugar</span>
+  <span class="pill">🔵 Pepsi Max</span>
+  <span class="pill">🔵 Pepsi Zero Sugar</span>
+</div>
+
+<div class="subhd">🔮 Goli Soda — A$6.50 each</div>
+<div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem;padding:.2rem 0;">
+  <span class="pill">🍋 Lemon Lime</span>
+  <span class="pill">🌿 Jeera</span>
+  <span class="pill">🍊 Orange</span>
+  <span class="pill">🍃 Mojito</span>
+  <span class="pill">🌹 Paneer Rose</span>
+</div>
+<div class="subhd" style="margin-top:1rem;">🥛 Lassi &amp; Milk Drinks</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Mango Lassi</div>
+      <div class="mdesc">Sweet mango yogurt drink</div>
+    </div>
+    <div class="mc-r"><span class="price">A$4.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Rose Milk</div>
+      <div class="mdesc">Chilled milk with rose flavor</div>
+    </div>
+    <div class="mc-r"><span class="price">A$4.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Lemon Soda (Sweet / Salt / Mixed)</div>
+      <div class="mdesc">Refreshing fizzy lemon drink</div>
+    </div>
+    <div class="mc-r"><span class="price">A$7.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Nannari Sarbath</div>
+      <div class="mdesc">Herbal root-based cooling drink</div>
+    </div>
+    <div class="mc-r"><span class="price">A$7.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Neer Moor (Spiced Buttermilk)</div>
+      <div class="mdesc">Light salted spiced buttermilk</div>
+    </div>
+    <div class="mc-r"><span class="price">A$5.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Badam Milk</div>
+      <div class="mdesc">Almond-flavored rich milk</div>
+    </div>
+    <div class="mc-r"><span class="price">A$6.95</span></div>
+  </div>
+</div>
+</div>
+<div class="subhd" style="margin-top:1rem;">🍮 Desserts</div><div class="mgrid">
+<div class="mc">
+  <div class="mc-img" style="background-image:url('assets/images/image_039.jpg');background-size:cover;background-position:center;"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Madurai Butter Sugar Bun (Bun Maska)</div>
+      <div class="mdesc">Warm bun with butter &amp; sugar</div>
+    </div>
+    <div class="mc-r"><span class="price">A$7.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Jigarthanda</div>
+      <div class="mdesc">Famous Madurai cold milk dessert</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Elaneer Payasam</div>
+      <div class="mdesc">Tender coconut sweet pudding</div>
+    </div>
+    <div class="mc-r"><span class="price">A$8.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Rose Milk Butter Bun (Bun Maska)</div>
+      <div class="mdesc">Butter bun with rose milk flavor</div>
+    </div>
+    <div class="mc-r"><span class="price">A$9.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Ice Cream (Vanilla / Chocolate)</div>
+      <div class="mdesc">Classic flavored ice cream</div>
+    </div>
+    <div class="mc-r"><span class="price">A$4.95</span></div>
+  </div>
+</div>
+<div class="mc">
+  <div class="mc-img" style="background:linear-gradient(135deg,#161610,#0c0c08);"></div>
+  <div class="mc-body">
+    <div class="mc-l">
+      <div class="mc-name"><span class="dot" style="background:#3d7a22;"></span>Filter Coffee Kulfi</div>
+      <div class="mdesc">Coffee-flavored frozen dessert</div>
+    </div>
+    <div class="mc-r"><span class="price">A$7.95</span></div>
+  </div>
+</div>
+</div>
+<div class="note" style="margin-top:1.5rem;background:rgba(255,255,255,.03);border-left:2px solid rgba(255,255,255,.1);color:rgba(237,228,206,.32);border-radius:10px;padding:1rem;">⚠️ Menu items may contain or come into contact with wheat, eggs, nuts and milk.</div>
+</div>
+</section>
+
+<!-- KALYANA VIRUNDU -->
+<!-- ▌▌▌ KALYANA ▌▌▌
+     Saturday wedding feast · prices, included items, add-ons -->
+<section class="kal sec" id="kalyana">
+<div class="kal-grid">
+<div>
+  <div class="rv"><div class="tag">Saturday Lunch Special</div>
+  <h2 class="kal-h">Kalyana<br/><em>Virundu</em></h2>
+  <p class="kal-sub">கல்யாண விருந்து — South Indian Wedding Feast</p>
+  <div class="kal-badge">🗓️ Every Saturday &nbsp;·&nbsp; Lunch Only &nbsp;·&nbsp; Limited Seats</div>
+  <p class="kal-desc">Kalyana Virundu means <em>Wedding Feast</em> in Tamil. Every Saturday we recreate the warmth of a South Indian wedding banquet — served with love and meant to be shared.</p></div>
+  <div class="kal-prices rv d1">
+    <div class="kp"><div class="kpl">🌿 Veg</div><div class="kpv">A$24.95</div></div>
+    <div class="kp"><div class="kpl">🍗 Non-Veg</div><div class="kpv">A$29.95</div></div>
+    <div class="kp"><div class="kpl">👶 Kids</div><div class="kpv">A$19.95</div></div>
+  </div>
+  <div class="k-panel rv d2" style="margin-top:1.5rem;">
+    <h4>The Feast Includes</h4>
+    <ul class="k-items">
+      <li>Ghee Parotta</li><li>Veg Kurma</li><li>Special Rice of the Day</li>
+      <li>White Basmati Rice</li><li>Paruppu Podi &amp; Ghee</li>
+      <li>Potato Peas Masala</li><li>Poriyal of the Day</li>
+      <li>Keerai Kootu (Spinach)</li><li>Sambar</li><li>Kara Kulambu</li>
+      <li>Rasam</li><li>Papad</li><li>Curd</li>
+      <li>Salted Chilli &amp; Pickle</li><li>Pineapple Kesari</li><li>Sweet of the Day</li>
+      <li class="nv">Chicken Curry</li><li class="nv">Goat Curry</li><li class="nv">Fish Curry</li>
+    </ul>
+  </div>
+</div>
+<div class="k-right rvr">
+  <div class="ao-panel">
+    <h4>Add-Ons</h4>
+    <div class="ao-grp"><div class="ao-grp-title nv">🍗 Non-Veg</div>
+      <div class="ao-row"><span>Chicken 65</span><span class="ao-p">A$4.95</span></div>
+      <div class="ao-row"><span>Chicken Varuval</span><span class="ao-p">A$4.95</span></div>
+      <div class="ao-row"><span>Omelette</span><span class="ao-p">A$4.95</span></div>
+      <div class="ao-row"><span>Mutton Chukka</span><span class="ao-p">A$4.95</span></div>
+      <div class="ao-row"><span>Mutton Kola Urundai</span><span class="ao-p">A$4.95</span></div>
+    </div>
+    <div class="ao-grp"><div class="ao-grp-title sf">🐟 Seafood</div>
+      <div class="ao-row"><span>Fish Fry</span><span class="ao-p">A$6.95</span></div>
+      <div class="ao-row"><span>Nethili Fry</span><span class="ao-p">A$6.95</span></div>
+      <div class="ao-row"><span>Prawn 65</span><span class="ao-p">A$6.95</span></div>
+      <div class="ao-row"><span>Prawn / Squid Thokku</span><span class="ao-p">A$6.95</span></div>
+    </div>
+    <div class="ao-grp"><div class="ao-grp-title vg">🌿 Veg</div>
+      <div class="ao-row"><span>Gobi 65</span><span class="ao-p">A$4.95</span></div>
+      <div class="ao-row"><span>Paneer 65</span><span class="ao-p">A$4.95</span></div>
+      <div class="ao-row"><span>Mushroom Chukka</span><span class="ao-p">A$4.95</span></div>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <a href="#find-us" class="btn-gold" onclick="document.getElementById('find-us').scrollIntoView({behavior:'smooth'});return false;">Reserve Your Spot →</a>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- WHY -->
+<!-- ▌▌▌ WHY (THE DIFFERENCE) ▌▌▌
+     4 selling-point cards · batter, chutneys, catering, student -->
+<section class="why sec">
+  <div style="text-align:center;margin-bottom:3rem;" class="rv">
+    <div class="tag" style="justify-content:center;">Why Just Dosa</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);">The <em>difference</em></h2>
+  </div>
+  <div class="why-grid stg">
+    <div class="wcard"><div class="wi">🌾</div><h3>Rice &amp; Lentil Batter</h3><p>Traditional fermented batter using premium rice and urad dal — no shortcuts, ever</p></div>
+    <div class="wcard"><div class="wi">🫙</div><h3>House-Made Chutneys</h3><p>Coconut, tomato, mint — all prepared fresh in-house daily</p></div>
+    <div class="wcard"><div class="wi">🎉</div><h3>We Cater For All Occasions</h3><p>Weddings, corporate events, parties — authentic South Indian catering across Melbourne</p></div>
+    <div class="wcard"><div class="wi">🎓</div><h3>Student Friendly</h3><p>10% off with Student ID — every visit, every order, no minimums</p></div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<!-- ▌▌▌ ORDER ▌▌▌
+     Delivery / Pickup / Dine-in cards · order links use data-order="square" -->
+<section class="order sec" id="order">
+  <div class="rv"><div class="tag" style="justify-content:center;">Get Your Dosa</div>
+  <h2 class="sec-h2 split-line" style="color:var(--cream);">Ready when <em>you are</em></h2>
+  <p style="color:var(--muted);max-width:420px;margin:1rem auto 0;font-weight:300;">Order for delivery or pickup, or dine in with us at Mill Park VIC 3082.</p></div>
+
+  <div class="o-cards stg">
+    <div class="ocard"><span class="oic">🛵</span><h3>Delivery</h3><p>Hot dosas delivered to your door via our partners</p>
+      <div class="plat-btns">
+        <a href="https://www.ubereats.com" target="_blank" class="plat ue">🖤 Uber Eats</a>
+        <a href="https://www.doordash.com" target="_blank" class="plat dd">🔴 DoorDash</a>
+      </div></div>
+    <div class="ocard"><span class="oic">🛍️</span><h3>Pickup</h3><p>Order ahead and pick up fresh and ready</p>
+      <a href="https://www.justdosa.com.au/" target="_blank" rel="noopener" data-order="square" class="btn-gold" style="display:inline-block;font-size:.78rem;padding:.75rem 1.5rem;">Order Pickup →</a></div>
+    <div class="ocard"><span class="oic">🪑</span><h3>Dine In</h3><p>Sit down and enjoy the full Just Dosa experience in Millpark</p>
+      <a href="#find-us" class="btn-outline" style="display:inline-flex;font-size:.78rem;padding:.75rem 1.5rem;">Find Us →</a></div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<!-- ▌▌▌ INSPIRATION ▌▌▌
+     South India culture tiles · Tirupati, Kerala, Madurai, Mysore -->
+<section class="sec" style="background:var(--dark2);">
+  <div class="rv" style="text-align:center;">
+    <div class="tag" style="justify-content:center;">The Soul of South India</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);">Our <em>inspiration</em></h2>
+  </div>
+  <div class="cult-grid rvs">
+    <div class="ctile">
+      <div class="ctile-bg" style="background-image:url('assets/images/image_040.jpg');background-size:cover;background-position:center;"></div>
+      <div class="ctile-ov"></div><span class="c-lbl">Andhra Pradesh</span>
+      <div class="ctile-c"><span class="ci">🌶️</span><h3>Tirupati Temple</h3><p>The sacred Venkateswara shrine — illuminated in all its golden glory</p></div>
+    </div>
+    <div class="ctile">
+      <div class="ctile-bg" style="background-image:url('assets/images/image_041.jpg');background-size:cover;background-position:center;"></div>
+      <div class="ctile-ov"></div><span class="c-lbl">Kerala</span>
+      <div class="ctile-c"><span class="ci">🌊</span><h3>Kerala Backwaters</h3><p>God's Own Country — serene sunset waters winding through lush palms</p></div>
+    </div>
+    <div class="ctile">
+      <div class="ctile-bg" style="background-image:url('assets/images/image_042.jpg');background-size:cover;background-position:center top;"></div>
+      <div class="ctile-ov"></div><span class="c-lbl">Tamil Nadu</span>
+      <div class="ctile-c"><span class="ci">🛕</span><h3>Meenakshi Temple</h3><p>Madurai's iconic Dravidian gopuram — towering with thousands of sculptures</p></div>
+    </div>
+    <div class="ctile">
+      <div class="ctile-bg" style="background-image:url('assets/images/image_043.jpg');background-size:cover;background-position:center;"></div>
+      <div class="ctile-ov"></div><span class="c-lbl">Karnataka</span>
+      <div class="ctile-c"><span class="ci">🏯</span><h3>Mysore Palace</h3><p>The grand illuminated palace — 97,000 bulbs of golden Dasara brilliance</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<!-- ══════════ TESTIMONIALS — slot before founders ══════════ -->
+<!-- ▌▌▌ TESTIMONIALS ▌▌▌
+     Reviews · featured rotating quote (JS) + marquee chips + trust stats. Swap real reviews in .t-slide and .t-chip -->
+<section class="testimonials sec" id="testimonials">
+  <div class="rv" style="text-align:center;margin-bottom:3rem;">
+    <div class="tag" style="justify-content:center;">⭐ Loved by Locals</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);">What our <em>guests</em> say</h2>
+    <p style="color:var(--muted);max-width:440px;margin:1rem auto 0;font-weight:300;">Real reviews from real Mill Park diners.</p>
+  </div>
+
+  <!-- Featured rotating quote -->
+  <div class="t-featured rv">
+    <div class="t-quote-mark">"</div>
+    <div class="t-stage">
+      <div class="t-slide on" data-idx="0">
+        <p class="t-text">Absolutely the best dosa I've had outside South India. The benne masala was crispy, buttery, golden perfection. The chutneys are made fresh — you can taste the difference.</p>
+        <div class="t-meta">
+          <div class="t-avatar">PR</div>
+          <div class="t-who"><strong>Priya R.</strong><span>Bundoora · Google Review</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="t-slide" data-idx="1">
+        <p class="t-text">Saturday Kalyana Virundu is a religious experience. 19 items on a banana leaf, every single one prepared with love. Felt like being at a wedding back home in Chennai.</p>
+        <div class="t-meta">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#7a3d22,#4a2010);">AK</div>
+          <div class="t-who"><strong>Arjun K.</strong><span>Reservoir · Repeat Customer</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="t-slide" data-idx="2">
+        <p class="t-text">My kids are the pickiest eaters and they devoured the ghee podi dosa. Service was warm, prices fair, and the student discount is a beautiful touch. Will be back every weekend.</p>
+        <div class="t-meta">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#3d7a22,#1d4010);">SM</div>
+          <div class="t-who"><strong>Sarah M.</strong><span>Mill Park · Family of 4</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="t-slide" data-idx="3">
+        <p class="t-text">Chicken 65 biryani had me in tears (the happy spicy kind). Authentic Madurai flavours, generous portions, and the Jigarthanda was the cherry on top. Just Dosa is the real deal.</p>
+        <div class="t-meta">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#8b6322,#5a4015);">RV</div>
+          <div class="t-who"><strong>Ravi V.</strong><span>Epping · Foodie</span></div>
+          <div class="t-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="t-controls">
+      <button class="t-arr" id="tPrev" aria-label="Previous review">←</button>
+      <div class="t-dots" id="tDots">
+        <button class="t-dot on" data-i="0" aria-label="Review 1"></button>
+        <button class="t-dot" data-i="1" aria-label="Review 2"></button>
+        <button class="t-dot" data-i="2" aria-label="Review 3"></button>
+        <button class="t-dot" data-i="3" aria-label="Review 4"></button>
+      </div>
+      <button class="t-arr" id="tNext" aria-label="Next review">→</button>
+    </div>
+  </div>
+
+  <!-- Marquee strip of shorter reviews -->
+  <div class="t-marquee-wrap rv">
+    <div class="t-marquee" id="tMarquee">
+      <div class="t-mq-track">
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Crispy outside, soft inside — exactly like home."</span><span class="t-chip-name">— Lakshmi P.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Best South Indian food in northern Melbourne. Period."</span><span class="t-chip-name">— Daniel W.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"The sambar! I could drink it by the bowl."</span><span class="t-chip-name">— Mei L.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Authentic, affordable, and the staff are wonderful."</span><span class="t-chip-name">— Karthik S.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Catered our wedding — guests are still talking about it."</span><span class="t-chip-name">— Anjali &amp; Rohan</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Pallipalayam chicken is unreal. Go hungry."</span><span class="t-chip-name">— James T.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Student discount + huge portions = my Friday tradition."</span><span class="t-chip-name">— Aisha N.</span></div>
+        <div class="t-chip"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Tastes exactly like Madurai. Speechless."</span><span class="t-chip-name">— Vivek M.</span></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Crispy outside, soft inside — exactly like home."</span><span class="t-chip-name">— Lakshmi P.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Best South Indian food in northern Melbourne. Period."</span><span class="t-chip-name">— Daniel W.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"The sambar! I could drink it by the bowl."</span><span class="t-chip-name">— Mei L.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Authentic, affordable, and the staff are wonderful."</span><span class="t-chip-name">— Karthik S.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Catered our wedding — guests are still talking about it."</span><span class="t-chip-name">— Anjali &amp; Rohan</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Pallipalayam chicken is unreal. Go hungry."</span><span class="t-chip-name">— James T.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Student discount + huge portions = my Friday tradition."</span><span class="t-chip-name">— Aisha N.</span></div>
+        <div class="t-chip" aria-hidden="true"><span class="t-chip-stars">★★★★★</span><span class="t-chip-q">"Tastes exactly like Madurai. Speechless."</span><span class="t-chip-name">— Vivek M.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="t-trust rv">
+    <div class="t-trust-item"><div class="t-trust-num">4.8</div><div class="t-trust-lbl">★ Google Rating</div></div>
+    <div class="t-trust-divider"></div>
+    <div class="t-trust-item"><div class="t-trust-num">500+</div><div class="t-trust-lbl">Five-Star Reviews</div></div>
+    <div class="t-trust-divider"></div>
+    <div class="t-trust-item"><div class="t-trust-num">10K+</div><div class="t-trust-lbl">Happy Guests</div></div>
+    <div class="t-trust-divider"></div>
+    <div class="t-trust-item"><div class="t-trust-num">100%</div><div class="t-trust-lbl">Halal Certified</div></div>
+  </div>
+</section>
+
+<!-- ▌▌▌ FOUNDERS ▌▌▌
+     Team / founder messages · edit names, roles, quotes -->
+<section class="sec" id="founders" style="background:var(--dark);">
+  <div style="text-align:center;" class="rv">
+    <div class="tag" style="justify-content:center;">The People Behind Just Dosa</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);">A message from <em>our family</em></h2>
+    <p style="color:var(--muted);max-width:460px;margin:1rem auto 0;font-weight:300;">Built on a shared dream — to share the food we grew up loving with Australia.</p>
+  </div>
+  <div class="f-grid">
+    <div class="fcard rvl"><div class="f-pic">CB</div><h3>Chandra Bharath Suryababu</h3><span class="f-role">Chef &amp; Co-Owner</span><p class="f-q">Growing up, I always loved my mum's cooking — I've been a big foodie my whole life. When creating this menu, we travelled across South India to find the best dishes we knew would please everyone. We created Just Dosa because our group of friends couldn't find good South Indian food nearby.</p></div>
+    <div class="fcard co rvr"><div class="f-pic">SK</div><h3>Santhana Krishnan</h3><span class="f-role">Chef &amp; Co-Founder</span><p class="f-q">For me, it's always been about the Open Benne Masala Dosa — golden-crisp, lathered in butter, with flavours you simply can't find anywhere else. That dish is what inspired us to build Just Dosa — to create a place where food this good could finally have a home in Australia.</p></div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<div class="findus" id="find-us">
+  <div class="fu-info">
+    <div class="rv"><div class="tag">Find Us</div>
+    <h2 class="sec-h2 split-line" style="color:var(--cream);margin-bottom:1.5rem;">Come visit <em>us</em></h2>
+    <p>We'd love to see you in person at Millpark, Victoria. Get in touch for catering &amp; group bookings too.</p></div>
+    <ul class="c-list rv d1">
+      <li class="c-item"><div class="c-ic">📍</div><div><span class="c-lbl2">Address</span><span class="c-val"><a href="https://maps.google.com/?q=Unit+5/5+Bush+Blvd+Mill+Park+VIC+3082" target="_blank" style="color:var(--gold2);">Unit 5/5 Bush Blvd, Mill Park VIC 3082</a></span></div></li>
+      <li class="c-item"><div class="c-ic">🕐</div><div><span class="c-lbl2">Hours</span><span class="c-val" style="line-height:2;">
+      Mon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5:30 – 10 pm<br>
+      Tue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgba(237,228,206,.35);font-style:italic;">Closed</span><br>
+      Wed &nbsp;&nbsp;&nbsp;&nbsp; 5:30 – 10 pm<br>
+      Thu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5:30 – 10 pm<br>
+      Fri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5:30 – 10 pm<br>
+      Sat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11 am – 2:30 pm, 5:30 – 10 pm<br>
+      Sun &nbsp;&nbsp;&nbsp;&nbsp; 11 am – 2:30 pm, 5:30 – 10 pm
+    </span></div></li>
+      <li class="c-item"><div class="c-ic">📞</div><div><span class="c-lbl2">Phone</span><span class="c-val"><a href="tel:0403829539" style="color:var(--gold2);">0403 829 539</a></span></div></li>
+      <li class="c-item"><div class="c-ic">🌐</div><div><span class="c-lbl2">Website</span><span class="c-val"><a href="https://www.justdosa.com.au/" target="_blank" style="color:var(--gold2);">www.justdosa.com</a></span></div></li>
+      <li class="c-item"><div class="c-ic">📸</div><div><span class="c-lbl2">Instagram</span><span class="c-val"><a href="https://www.instagram.com/just.dosa?igsh=Nm14a2I2bm54d2k4" target="_blank" style="color:var(--gold2);">@just.dosa</a> — follow for daily specials</span></div></li>
+    </ul>
+  </div>
+  <div class="fu-map">
+    <div class="mi">
+      <span class="pin">📍</span>
+      <p style="font-size:1rem;font-weight:600;color:rgba(255,255,255,.7);">Unit 5/5 Bush Blvd</p><p style="color:rgba(255,255,255,.5);">Mill Park VIC 3082</p>
+    </div>
+    <a href="https://maps.google.com/?q=Unit+5/5+Bush+Blvd+Mill+Park+VIC+3082" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#000;padding:.7rem 1.5rem;border-radius:100px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:1;margin-bottom:1rem;transition:background .3s;">📍 Get Directions</a>
+    <div class="catering-box">
+      <h4>🎪 We Cater For All Occasions!</h4>
+      <p>Weddings, corporate, birthdays and more. Call us to discuss your event.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ▌▌▌ FOOTER ▌▌▌
+     Bottom links, contact info, copyright · update phone/address/social here -->
+<footer>
+  <div class="ft">
+    <div class="fbr"><span class="f-logo">Just Dosa</span><p>Bringing the authentic flavours of South India to Millpark, Melbourne — one crispy dosa at a time.</p><span class="f-tag2">"Crispy outside. Warmth inside."</span></div>
+    <div class="fcol"><h5>Menu</h5><ul>
+      <li><a href="#menu">Dosas</a></li><li><a href="#menu">Biryanis</a></li>
+      <li><a href="#menu">Drinks</a></li><li><a href="#kalyana">Kalyana Virundu</a></li>
+    </ul></div>
+    <div class="fcol"><h5>Order</h5><ul>
+      <li><a href="https://www.ubereats.com" target="_blank">Uber Eats</a></li>
+      <li><a href="https://www.doordash.com" target="_blank">DoorDash</a></li>
+      <li><a href="https://www.justdosa.com.au/" target="_blank" rel="noopener" data-order="square">Order Pickup</a></li>
+      <li><a href="#find-us">Dine In</a></li>
+    </ul></div>
+    <div class="fcol"><h5>Contact</h5><ul>
+      <li><a href="tel:0403829539">0403 829 539</a></li>
+      <li><a href="https://www.instagram.com/just.dosa" target="_blank">@just.dosa</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#founders">Our Team</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+    </ul></div>
+  </div>
+  <div class="fb">
+    <span>© 2025 Just Dosa · Unit 5/5 Bush Blvd, Mill Park VIC 3082</span>
+    <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<!-- ▌▌▌ CART DRAWER ▌▌▌
+     Slide-out shopping cart · logic in main.js (CART SYSTEM) -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3>Your <em>Cart</em></h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cf-row"><span>Subtotal</span><span id="cartSubtotal">A$0.00</span></div>
+    <div class="cf-row"><span>GST (10% incl.)</span><span id="cartGst">A$0.00</span></div>
+    <div class="cf-row total"><span>Total</span><span id="cartTotal">A$0.00</span></div>
+    <p class="cf-note">🎓 Student? Show ID at pickup for <strong>10% off</strong> · Final price confirmed when order is placed</p>
+    <button class="cart-checkout" id="cartCheckoutSquare">
+      <span>⚡ Pay Online with Square</span>
+      <span class="cart-checkout-sub">Order goes straight to kitchen</span>
+    </button>
+    <button class="cart-checkout-wa" id="cartCheckoutWA">
+      <span>💬 Or send via WhatsApp</span>
+    </button>
+    <div class="cart-error" id="cartError" style="display:none;"></div>
+    <button class="cart-clear" id="cartClear">Clear Cart</button>
+  </div>
+</aside>
+<div class="cart-toast" id="cartToast"><span class="tc-ic">✓</span><span id="toastMsg">Added to cart</span></div>
+
+<!-- ▌▌▌ WHATSAPP FLOAT ▌▌▌
+     Floating contact button · bottom-right · always visible -->
+<a href="https://wa.me/61403829539?text=Hi%20Just%20Dosa!%20I%20have%20a%20question..."
+   target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16.04 4C9.4 4 4 9.4 4 16.04c0 2.12.55 4.18 1.6 6L4 28l6.13-1.6a12 12 0 0 0 5.9 1.5h.01C22.68 27.9 28 22.5 28 15.96 28 9.4 22.68 4 16.04 4Zm0 21.9h-.01a10 10 0 0 1-5.07-1.39l-.36-.21-3.64.95.97-3.55-.24-.37a9.9 9.9 0 0 1-1.52-5.29c0-5.5 4.47-9.96 9.97-9.96 2.66 0 5.16 1.04 7.04 2.92a9.9 9.9 0 0 1 2.92 7.05c0 5.5-4.47 9.96-9.97 9.96Zm5.47-7.46c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+  </svg>
+  <span class="wa-pulse"></span>
+  <span class="wa-tip">Questions? Chat with us</span>
+</a>
+
+<!-- ▌▌▌ SCRIPTS ▌▌▌
+     External libs (GSAP, ScrollTrigger, Lenis) then site scripts.
+     main.js = core/cart/hero · motion.js = scroll+smooth · effects.js = premium effects -->
+<!-- Premium motion stack: GSAP + ScrollTrigger + Lenis -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/effects.js"></script>
+</body>
+</html>

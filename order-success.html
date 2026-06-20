@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Order Confirmed · Just Dosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  body{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:2rem;}
+  .success-card{max-width:540px;width:100%;text-align:center;background:linear-gradient(180deg,var(--dark2),var(--dark));border:1px solid rgba(212,148,42,.25);border-radius:24px;padding:3rem 2rem;position:relative;overflow:hidden;}
+  .success-card::before{content:'';position:absolute;inset:-2px;background:radial-gradient(circle at 50% 0%,rgba(240,184,76,.15),transparent 60%);pointer-events:none;}
+  .success-icon{font-size:4rem;margin-bottom:1rem;display:inline-block;animation:pop .6s var(--ease) backwards;}
+  @keyframes pop{from{transform:scale(0) rotate(-30deg);opacity:0;}to{transform:scale(1) rotate(0);opacity:1;}}
+  .success-card h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:var(--cream);margin:0 0 1rem;line-height:1.1;}
+  .success-card h1 em{color:var(--gold2);font-style:italic;}
+  .success-card p{color:var(--muted);font-size:.95rem;line-height:1.6;margin-bottom:1rem;}
+  .success-card .order-id{display:inline-block;background:rgba(212,148,42,.12);color:var(--gold2);padding:.5rem 1rem;border-radius:8px;font-family:'Courier New',monospace;font-size:.78rem;margin:1rem 0;letter-spacing:.04em;}
+  .success-steps{text-align:left;background:rgba(0,0,0,.3);border-radius:14px;padding:1.5rem;margin:1.5rem 0;border:1px solid var(--border);}
+  .success-steps h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--cream);margin:0 0 1rem;}
+  .success-steps ol{padding-left:1.2rem;margin:0;color:var(--cream);}
+  .success-steps li{margin-bottom:.6rem;font-size:.85rem;}
+  .success-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
+  .success-actions a{text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="success-card">
+  <div class="success-icon">🎉</div>
+  <h1>Order <em>confirmed!</em></h1>
+  <p>Thank you for choosing Just Dosa.<br/>Your order is on its way to our kitchen.</p>
+  <div class="order-id" id="orderRef">Order: —</div>
+  <div class="success-steps">
+    <h3>What happens next</h3>
+    <ol>
+      <li>Our kitchen receives your order on the Square POS instantly.</li>
+      <li>We'll prep your food fresh — usually ready in <strong style="color:var(--gold2);">15–20 minutes</strong>.</li>
+      <li>You'll get an SMS confirmation from Square with pickup details.</li>
+      <li>🎓 Show your Student ID at pickup for 10% off your next order.</li>
+    </ol>
+  </div>
+  <div class="success-actions">
+    <a href="/" class="btn-gold">← Back to Menu</a>
+    <a href="tel:0403829539" class="btn-outline">📞 Call Us</a>
+  </div>
+</div>
+<script>
+  // Clear cart after successful payment
+  try { localStorage.removeItem('justDosaCart'); } catch(e){}
+  // Show order ID if Square passed it back as a query param
+  const params = new URLSearchParams(location.search);
+  const orderId = params.get('orderId') || params.get('order_id') || params.get('transactionId');
+  if (orderId) document.getElementById('orderRef').textContent = 'Order: ' + orderId.slice(0,12).toUpperCase();
+  else         document.getElementById('orderRef').style.display = 'none';
+</script>
+</body>
+</html>
